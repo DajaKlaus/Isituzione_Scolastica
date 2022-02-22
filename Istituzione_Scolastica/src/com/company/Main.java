@@ -8,9 +8,11 @@ public class Main {
     public static void main(String[] args) {
         ArrayList <Integer> ora = new ArrayList<>();
         ArrayList <String> disciplina = new ArrayList<>();
-        Aula aula = new Aula();
 
         String d, gg = null;
+
+        ArrayList <String> studente = new ArrayList<>();
+
 
         Scanner in = new Scanner(System.in);
 
@@ -78,6 +80,14 @@ public class Main {
                 }
                 break;
             case 2:
+                System.out.println("Inserisci il numero di ragazzi che vuoi inserire");
+                int dim = in.nextInt();
+
+                for (int i = 0; i < dim; i ++) {
+                    System.out.println("Inserisci nome studente");
+                    String nome = in.next();
+                    studente.add(nome);
+                }
                 break;
             case 3:
                 break;
