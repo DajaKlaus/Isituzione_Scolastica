@@ -10,7 +10,7 @@ public class Main {
         ArrayList <String> disciplina = new ArrayList<>();
         Aula aula = new Aula();
 
-        String d;
+        String d, gg = null;
 
         Scanner in = new Scanner(System.in);
 
@@ -28,16 +28,53 @@ public class Main {
 
         switch (decisione) {
             case 1:
-                for (int i = 1; i <= ore; i++) {
-                    System.out.println("inserisci disciplina per la " + i + "^ora");
-                    d = in.next();
-                    disciplina.add(d);
-                    aula.setDiscipline(disciplina);
-                }
-
-                for (int i = 0; i <= ore; i++) {
-                    System.out.println("orario: \n" +
-                            i + " ora: " + disciplina.get(i)); //index out of bounds
+                System.out.println("Inserisci il numero dell'aula");
+                int nAula = in.nextInt();
+                int cont = 0;
+                for (int i = 1; i <= 5; i ++) {
+                    switch (i) {
+                        case 1:
+                            gg = "lunedì";
+                            break;
+                        case 2:
+                            gg = "martedì";
+                            break;
+                        case 3:
+                            gg = "mercoledì";
+                            break;
+                        case 4:
+                            gg = "giovedì";
+                            break;
+                        case 5:
+                            gg = "venerdì";
+                            break;
+                    }
+                    System.out.println(gg);
+                    for (int j = 0; j < ore; j++) {
+                        System.out.println("inserisci materia per la " + (j + 1) + " ora");
+                        d = in.next();
+                        ora.add(j + 1);
+                        disciplina.add(d);
+                    }
+                    if (gg.equalsIgnoreCase("lunedì")) {
+                        System.out.println(gg);
+                    }
+                    if (gg.equalsIgnoreCase("martedì")) {
+                        System.out.println(gg);
+                    }
+                    if (gg.equalsIgnoreCase("mercoledì")) {
+                        System.out.println(gg);
+                    }
+                    if (gg.equalsIgnoreCase("giovedì")) {
+                        System.out.println(gg);
+                    }
+                    if (gg.equalsIgnoreCase("venerdì")) {
+                        System.out.println(gg);
+                    }
+                    for (int h = 1; h <= ore; h++) {
+                        System.out.println(h + ". " + disciplina.get(cont));
+                        cont ++;
+                    }
                 }
                 break;
             case 2:
